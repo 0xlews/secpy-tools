@@ -1,0 +1,9 @@
+Base64 Encoded Strings:
+1. SGVsbG8gd29ybGQ=     # This is "Hello world" encoded in Base64
+2. YW5vdGhlciBlbmNvZGVkIHN0cmluZw==     # Another encoded string in Base64
+3. VGVzdCBmb3Igc2NyaXB0     # "Test for script" encoded in Base64
+
+Hexadecimal Encoded Strings:
+1. 48656c6c6f20576f726c64     # This is "Hello World" encoded in Hexadecimal
+2. 546869732069732061207465737420666f722074686520736372697074     # This is "This is a test for the script" encoded in Hexadecimal
+3. 616e6f746865722068657820737472696e67     # "another hex string" in Hexadecimal

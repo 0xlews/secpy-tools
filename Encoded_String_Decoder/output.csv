@@ -1,0 +1,5 @@
+SGVsbG8gd29ybGQ=, Base64, Hello world
+YW5vdGhlciBlbmNvZGVkIHN0cmluZw==, Base64, another encoded string
+VGVzdCBmb3Igc2NyaXB0, Base64, Test for script
+48656c6c6f20576f726c64, Hexadecimal, Hello World
+546869732069732061207465737420666f722074686520736372697074, Hexadecimal, This is a test for the script

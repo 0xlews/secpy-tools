@@ -1,11 +1,11 @@
 # Encoded String Decoder
 
-A simple Python utility that scans a given file for potential Base64 and Hexadecimal encoded strings and decodes them. 
+Encoded String Decoder is a simple Python utility designed meticulously to decode obscured content within files. Utilizing regex pattern recognition techniques, it scans through a file to identify strings potentially encrypted using Base64 and Hexadecimal encoding methods, decodes them, and conveniently outputs the original encoded string, encoding method, and the decoded string.
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
+  - [Requirements](#requirements)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Functionality](#functionality)
@@ -15,9 +15,10 @@ A simple Python utility that scans a given file for potential Base64 and Hexadec
 
 ## Getting Started
 
-### Prerequisites
+### Requirements
 
-- Python 3.10.4
+- Python 3.10.4 or higher
+- Additional packages may be specified in `requirements.txt`
 
 ### Installation
 
