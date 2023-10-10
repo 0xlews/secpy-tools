@@ -4,6 +4,7 @@ import re
 import binascii  
 import sys
 import urllib.parse
+import csv
 
 # Ensure script is run with Python 3.10.4 or higher
 if sys.version_info < (3, 10, 4):
@@ -98,7 +99,6 @@ def detect_and_decode(file_path):
     
     return decoded_data
 
-
 def main():
     """Main function to parse arguments and handle file I/O."""
     parser = argparse.ArgumentParser(description="Decode encoded strings in a file.")
@@ -110,10 +110,14 @@ def main():
     decoded_data = detect_and_decode(args.input)
     
     # Write the original string, its encoding method, and the decoded string to the output file
-    with open(args.output, 'w', encoding='utf-8') as f:
-        for original, encoding, data in decoded_data:
-            f.write(f'"{original}", "{encoding}", "{data}"\n')
-
+    with open(args.output, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        
+        # Write header to CSV
+        writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])
+        
+        # Write decoded data to CSV
+        writer.writerows(decoded_data)
 
 if __name__ == "__main__":
     main()
