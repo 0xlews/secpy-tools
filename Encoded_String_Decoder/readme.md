@@ -22,10 +22,10 @@ Encoded String Decoder is a simple Python utility designed meticulously to decod
 
 ### Installation
 
-1. Clone the repository
+Clone the repository
    ```sh
-   git clone https://github.com/lewiswigmore/python-tools.git
-
+  git clone https://github.com/lewiswigmore/python-tools.git
+  ```
 ## Usage
    ```sh
   python decoder.py INPUT_FILE OUTPUT_FILE [-e ENCODING]
