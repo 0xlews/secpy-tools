@@ -5,7 +5,7 @@ Welcome to the Python Tools repository, a collection of versatile and easy-to-us
 ## 1. Encoded String Decoder
 
 ### Description
-The Encoded String Decoder is a Python utility crafted to locate and decode strings that are encoded using Base64 and Hexadecimal encoding within a provided file. The tool peeks into the file, detects encoded strings following the specified formats, and decodes them, offering insights into potentially concealed or obfuscated data.
+The Encoded String Decoder is a Python utility crafted to locate and decode strings that are encoded within a provided file. The tool peeks into the file, detects encoded strings following the specified formats, and decodes them, offering insights into potentially concealed or obfuscated data.
 
 
 # Future Tools
