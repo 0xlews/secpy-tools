@@ -5,6 +5,7 @@ import binascii
 import sys
 import urllib.parse
 import csv
+import os
 
 # Ensure script is run with Python 3.10.4 or higher
 if sys.version_info < (3, 10, 4):
@@ -107,16 +108,19 @@ def main():
     
     args = parser.parse_args()
     
+    # Ensure the output file has a .csv extension
+    output_file_path = args.output
+    _, ext = os.path.splitext(output_file_path)
+    if not ext:  # No extension provided
+        output_file_path = f"{output_file_path}.csv"
+    
     decoded_data = detect_and_decode(args.input)
     
     # Write the original string, its encoding method, and the decoded string to the output file
-    with open(args.output, 'w', newline='', encoding='utf-8') as f:
+    with open(output_file_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        
-        # Write header to CSV
+        # Write header and content to CSV
         writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])
-        
-        # Write decoded data to CSV
         writer.writerows(decoded_data)
 
 if __name__ == "__main__":
