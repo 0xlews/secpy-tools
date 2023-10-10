@@ -29,7 +29,7 @@ Encoded String Decoder is a simple Python utility designed meticulously to decod
 ## Usage
    ```sh
   python decoder.py INPUT_FILE OUTPUT_FILE [-e ENCODING]
-
+  ```
 - INPUT_FILE: Path to the file containing the encoded strings.
 - OUTPUT_FILE: Path to the file where the decoded data will be written, with a valid extension (.csv or .json).
 - ENCODING (optional): The encoding method to detect ("Base64", "Hexadecimal", or "URL Encoding"). If omitted, all encoding methods are used.
