@@ -6,6 +6,7 @@ import sys
 import urllib.parse
 import csv
 import os
+import json
 
 # Ensure script is run with Python 3.10.4 or higher
 if sys.version_info < (3, 10, 4):
@@ -108,20 +109,30 @@ def main():
     
     args = parser.parse_args()
     
-    # Ensure the output file has a .csv extension
-    output_file_path = args.output
-    _, ext = os.path.splitext(output_file_path)
-    if not ext:  # No extension provided
-        output_file_path = f"{output_file_path}.csv"
+    # Ensure the output file has a valid extension and get output format
+    output_file_path, ext = os.path.splitext(args.output)
+    if not ext or ext.lower() not in ['.csv', '.json']:
+        sys.exit("Output file must have a valid extension (.csv or .json).")
     
+    # Get decoded data
     decoded_data = detect_and_decode(args.input)
     
-    # Write the original string, its encoding method, and the decoded string to the output file
-    with open(output_file_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        # Write header and content to CSV
-        writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])
-        writer.writerows(decoded_data)
+    # Output to CSV
+    if ext.lower() == '.csv':
+        with open(args.output, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])  # header
+            writer.writerows(decoded_data)  # data rows
+    
+    # Output to JSON
+    elif ext.lower() == '.json':
+        json_data = [
+            {"Encoded String": enc, "Encoding Type": enc_type, "Decoded String": dec}
+            for enc, enc_type, dec in decoded_data
+        ]
+        with open(args.output, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=4)
+
 
 if __name__ == "__main__":
     main()
