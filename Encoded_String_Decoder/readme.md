@@ -17,14 +17,13 @@ A simple Python utility that scans a given file for potential Base64 and Hexadec
 
 ### Prerequisites
 
-- Python 3.x
-- Basic knowledge of command-line operations
+- Python 3.10.4
 
 ### Installation
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/[YourUsername]/EncodedStringDecoder.git
+   git clone https://github.com/lewiswigmore/python-tools.git
 
 ## Usage
 
@@ -40,14 +39,18 @@ Prevent Duplicate Decoding: Ensures that if a Hexadecimal string is also valid B
 
 ## Built With
 
-Python 3
+Python 3.10.4
 
 ## Contribution
 
 Fork the Project
+
 Create your Feature Branch (git checkout -b feature/AmazingFeature)
+
 Commit your Changes (git commit -m 'Add some AmazingFeature')
+
 Push to the Branch (git push origin feature/AmazingFeature)
+
 Open a Pull Request
 
 ## License
