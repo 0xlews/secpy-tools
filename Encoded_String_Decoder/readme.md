@@ -27,16 +27,19 @@ Encoded String Decoder is a simple Python utility designed meticulously to decod
    git clone https://github.com/lewiswigmore/python-tools.git
 
 ## Usage
+   ```sh
+  python decoder.py INPUT_FILE OUTPUT_FILE [-e ENCODING]
 
-python decoder.py [INPUT_FILE] [OUTPUT_FILE]
+- INPUT_FILE: Path to the file containing the encoded strings.
+- OUTPUT_FILE: Path to the file where the decoded data will be written, with a valid extension (.csv or .json).
+- ENCODING (optional): The encoding method to detect ("Base64", "Hexadecimal", or "URL Encoding"). If omitted, all encoding methods are used.
 
 ## Functionality
 
-Detect and Decode Base64 Strings: This tool identifies potential Base64 strings using a regular expression and decodes them, considering validation to ensure accurate decoding.
-
-Detect and Decode Hexadecimal Strings: Similarly, it identifies and decodes Hexadecimal strings.
-
-Prevent Duplicate Decoding: Ensures that if a Hexadecimal string is also valid Base64, it's not decoded twice.
+- Detect and Decode Various Encoded Strings: This tool identifies potential Base64, Hexadecimal, and URL-encoded strings using regular expressions and decodes them, considering validation to ensure accurate decoding.
+- Selective Decoding: The tool allows users to specify which encoding method should be used, providing the flexibility to focus on specific types of encoded strings.
+- Output Formats: Decoded data can be outputted in two formats: CSV or JSON, giving users the option to work with the data in different contexts.
+- Prevent Duplicate Decoding: Ensures that if a Hexadecimal string is also valid Base64, it\'s not decoded twice.
 
 ## Built With
 
