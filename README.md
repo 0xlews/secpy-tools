@@ -14,8 +14,15 @@ The Caesar Cipher Decryption tool is designed to decrypt messages that have been
 
 To use this tool, follow the instructions provided in the [Caesar Cipher Decryption README](caesar_decryption/README.md).
 
+## 3. RC4 Cryptography
+
+### Description
+The RC4 Cryptography tool allows you to encrypt and decrypt messages using the RC4 (Rivest Cipher 4) stream cipher. It provides a simple command-line interface for encrypting and decrypting messages with a specified key.
+
+To use this tool, follow the instructions provided in the [RC4 Cryptography README](rc4crypt/README.md).
+
 # Future Tools
-While the repository currently features the Encoded String Decoder and the Caesar Cipher Decryption tool, there's a roadmap to introduce more tools that cater to varied use-cases and necessities. Here are a few domains where new tools might emerge:
+While the repository currently features the Encoded String Decoder, the Caesar Cipher Decryption tool, and the RC4 Cryptography tool, there's a roadmap to introduce more tools that cater to varied use-cases and necessities. Here are a few domains where new tools might emerge:
 
 - Data Processing Utilities
 - File Management Tools
