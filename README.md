@@ -7,6 +7,8 @@ Welcome to the Python Tools repository, a collection of versatile and easy-to-us
 ### Description
 The Encoded String Decoder is a Python utility crafted to locate and decode strings that are encoded within a provided file. The tool peeks into the file, detects encoded strings following the specified formats, and decodes them, offering insights into potentially concealed or obfuscated data.
 
+To use this tool, follow the instructions provided in the [Encoded String Decoder README](encoded_string_decoder/README.md).
+
 ## 2. Caesar Cipher Decryption
 
 ### Description
@@ -32,4 +34,3 @@ While the repository currently features the Encoded String Decoder, the Caesar C
 # License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
-
