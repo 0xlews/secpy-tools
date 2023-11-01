@@ -32,3 +32,4 @@ While the repository currently features the Encoded String Decoder, the Caesar C
 # License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
