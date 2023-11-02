@@ -20,7 +20,7 @@ To use the script, run it from the command line, providing the following argumen
 
 1. `operation`: Specify whether you want to "encrypt" or "decrypt" a message.
 2. `key`: Enter the encryption/decryption key as a string.
-3. `message`: Provide the message you want to encrypt or the ciphertext in hexadecimal format for decryption.
+3. `message`: Provide the message you want to encrypt or the ciphertext for decryption.
 
 #### Encryption Example:
 
@@ -35,10 +35,10 @@ python rc4crypt.py encrypt YourSecretKey "This is a secret message"
 To decrypt a message, use the following command:
 
 ```bash
-python rc4crypt.py decrypt YourSecretKey CiphertextAsHexString
+python rc4crypt.py decrypt YourSecretKey CiphertextString
 ```
 
-Replace `YourSecretKey` with your actual encryption key, and `CiphertextAsHexString` with the hexadecimal ciphertext you want to decrypt.
+Replace `YourSecretKey` with your actual encryption key, and `CiphertextString` with the ciphertext you want to decrypt.
 
 ## Security Note
 
