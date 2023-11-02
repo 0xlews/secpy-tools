@@ -1,6 +1,3 @@
-Certainly, here's a sample README.md file for your `rc4crypt.py` script:
-
-```markdown
 # RC4 Cryptography Tool
 
 ## Overview
@@ -50,6 +47,3 @@ Please note that the RC4 cipher is considered insecure for modern cryptographic 
 ## License
 
 This script is provided under the [MIT License](LICENSE).
-```
-
-Make sure to create a file named `README.md` in the same directory as your `rc4crypt.py` script and copy the content above into it. You can customize the README further to include additional details if needed.
