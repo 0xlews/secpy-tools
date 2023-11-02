@@ -28,3 +28,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     clean_csv(args.input_file, args.output_file, args.remove_duplicates)
+

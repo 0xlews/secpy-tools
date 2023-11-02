@@ -29,3 +29,4 @@ if __name__ == '__main__':
     merged_dataset = merge_csv_files(args.existing_file, args.new_file, args.common_column, args.column_to_append)
     merged_dataset.to_csv(args.output_file, index=False)
     print(f"Merged dataset saved to {args.output_file}")
+
