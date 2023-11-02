@@ -1,4 +1,3 @@
-```markdown
 # CSV Data Tools
 
 A collection of Python scripts to work with CSV data.
