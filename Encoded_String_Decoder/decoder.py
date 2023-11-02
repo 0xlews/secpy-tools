@@ -1,71 +1,62 @@
 import argparse
 import base64
-import re
-import binascii  
-import sys
-import urllib.parse
+import binascii
 import csv
 import os
+import re
+import sys
+import urllib.parse
 import json
 
-# Ensure script is run with Python 3.10.4 or higher
+# Ensure Python version compatibility
 if sys.version_info < (3, 10, 4):
-    sys.exit("Script requires Python 3.10.4 or higher")
+    sys.exit("Requires Python 3.10.4 or higher")
 
+# Function to check if a string is valid base64
 def is_valid_base64(s):
-    """Check if a string is valid Base64 encoding."""
     pattern = re.compile(r'^(?:%[0-9a-fA-F]{2}|[A-Za-z0-9_.~!$&\'()*+,;=:@/-])+$')
     return bool(pattern.match(s))
 
+# Function to check if a string is valid hexadecimal
 def is_valid_hex(s):
-    """Check if a string is valid Hexadecimal encoding."""
     pattern = re.compile(r'^[0-9a-fA-F]+$')
     return bool(pattern.match(s))
 
+# Function to check if a string is valid URL encoding
 def is_valid_url(s):
-    """Check if a string may be URL-encoded."""
-    # Pattern looks for '%' followed by two hexadecimal digits.
     pattern = re.compile(r'(?:%[0-9a-fA-F]{2}|[A-Za-z0-9_.~!$&\'()*+,;=:@/-])+')
     return bool(pattern.match(s))
 
-
+# Function to decode a hexadecimal string
 def decode_hex(s):
-    """Try to decode a hexadecimal string into utf-8, return None if unsuccessful."""
     try:
         return bytes.fromhex(s).decode('utf-8')
     except (ValueError, binascii.Error, UnicodeDecodeError):
-        return None 
+        return None
 
+# Function to determine if a string is mostly readable text
 def is_readable_text(s):
-    """Check if a string seems to be readable text by ensuring 95% or more characters are printable."""
-    threshold = 0.95  
+    threshold = 0.95
     total_chars = len(s)
     printable_chars = sum(1 for c in s if c.isprintable())
     ratio = printable_chars / total_chars
     return ratio > threshold
 
+# Function to detect and decode encoded strings in a file
 def detect_and_decode(file_path, encoding=None):
-    """
-    Detect and decode encoded strings within a given file.
-
-    Args:
-        file_path (str): Path to the file to be analyzed.
-        encoding (str): Encoding method to be used.
-
-    Returns:
-        list: A list of tuples containing original encoded string, encoding type, and decoded string.
-    """
     with open(file_path, 'rb') as f:
         content = f.read()
-        
+
+    # Define regular expressions for different types of encodings
     pattern_b64 = rb'(?:[A-Za-z0-9+/]{4}){2,}(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?'
     pattern_hex = rb'[0-9a-fA-F]+'
     pattern_url = rb'(?:%[0-9a-fA-F]{2}|[A-Za-z0-9_.~!$&\'()*+,;=:@/-])+'
 
+    # Find encoded strings matching the regular expressions
     encoded_strings_b64 = re.findall(pattern_b64, content)
     encoded_strings_hex = re.findall(pattern_hex, content)
     encoded_strings_url = re.findall(pattern_url, content)
-        
+
     decoded_data = []
 
     if encoding in [None, "Base64"]:
@@ -74,12 +65,12 @@ def detect_and_decode(file_path, encoding=None):
             if is_valid_base64(encoded_str):
                 try:
                     decoded = base64.b64decode(encoded).decode('utf-8')
-                    if decoded.strip() and is_readable_text(decoded):  
+                    if decoded.strip() and is_readable_text(decoded):
                         decoded_data.append((encoded_str, "Base64", decoded))
                 except:
-                    pass 
+                    pass
 
-    MIN_HEX_LENGTH = 4  # minimal length to reduce noise
+    MIN_HEX_LENGTH = 4
 
     if encoding in [None, "Hexadecimal"]:
         for encoded in encoded_strings_hex:
@@ -87,48 +78,47 @@ def detect_and_decode(file_path, encoding=None):
             if is_valid_hex(encoded_str) and len(encoded_str) >= MIN_HEX_LENGTH and encoded not in encoded_strings_b64:
                 decoded = decode_hex(encoded_str)
                 if decoded and decoded.strip() and is_readable_text(decoded):
-                    decoded_data.append((encoded_str, "Hexadecimal", decoded))
+                    decoded_data.append((encoded_str, "Hex", decoded))
 
     if encoding in [None, "URL Encoding"]:
         for encoded in encoded_strings_url:
             encoded_str = encoded.decode('utf-8', 'ignore')
             try:
-                # Additional checks to be more confident that it is really URL encoded data
                 if "%" in encoded_str and encoded_str not in [e[0] for e in decoded_data]:
                     decoded = urllib.parse.unquote(encoded_str)
                     if decoded.strip() and is_readable_text(decoded):
                         decoded_data.append((encoded_str, "URL Encoding", decoded))
             except:
                 pass
-    
+
     return decoded_data
 
+# Main function to handle command-line arguments and execute the program
 def main():
-    """Main function to parse arguments and handle file I/O."""
-    parser = argparse.ArgumentParser(description="Decode encoded strings in a file.")
-    parser.add_argument("input", help="Path to the input file.")
-    parser.add_argument("output", help="Path to the output file.")
-    parser.add_argument("-e", "--encoding", choices=["Base64", "Hexadecimal", "URL Encoding"],
-                        help="Specify the encoding method to detect (default: all).")
+    parser = argparse.ArgumentParser(description="Decode encoded strings in a file")
+    parser.add_argument("input", help="Input file path")
+    parser.add_argument("output", help="Output file path")
+    parser.add_argument(
+        "-e", "--encoding",
+        choices=["Base64", "Hex", "URL Encoding"],
+        help="Specify the encoding method to detect (default: all)"
+    )
 
     args = parser.parse_args()
-    
-    # Ensure the output file has a valid extension and get output format
+
+    # Check the output file extension
     output_file_path, ext = os.path.splitext(args.output)
     if not ext or ext.lower() not in ['.csv', '.json']:
-        sys.exit("Output file must have a valid extension (.csv or .json).")
-    
-    # Pass the selected encoding method to detect_and_decode()
+        sys.exit("Output file must have a valid extension (.csv or .json)")
+
     decoded_data = detect_and_decode(args.input, args.encoding)
-    
-    # Output to CSV
+
     if ext.lower() == '.csv':
         with open(args.output, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
-            writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])  # header
-            writer.writerows(decoded_data)  # data rows
-    
-    # Output to JSON
+            writer.writerow(["Encoded String", "Encoding Type", "Decoded String"])
+            writer.writerows(decoded_data)
+
     elif ext.lower() == '.json':
         json_data = [
             {"Encoded String": enc, "Encoding Type": enc_type, "Decoded String": dec}
@@ -136,7 +126,6 @@ def main():
         ]
         with open(args.output, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, ensure_ascii=False, indent=4)
-
 
 if __name__ == "__main__":
     main()

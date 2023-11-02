@@ -16,12 +16,12 @@
     },
     {
         "Encoded String": "48656c6c6f20576f726c64",
-        "Encoding Type": "Hexadecimal",
+        "Encoding Type": "Hex",
         "Decoded String": "Hello World"
     },
     {
         "Encoded String": "546869732069732061207465737420666f722074686520736372697074",
-        "Encoding Type": "Hexadecimal",
+        "Encoding Type": "Hex",
         "Decoded String": "This is a test for the script"
     },
     {
