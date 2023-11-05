@@ -47,4 +47,4 @@ The repository is under active development, with plans to expand the toolkit to 
 
 ## License
 
-Each project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Each tool within the Python Tools Repository is individually licensed under the MIT License - see the respective `LICENSE` file in each project directory for details.
