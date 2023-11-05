@@ -1,36 +1,50 @@
 # Python Tools Repository
 
-Welcome to the Python Tools repository, a collection of versatile and easy-to-use Python utilities designed to simplify and automate various tasks. The repository aims to provide a suite of tools that cater to a range of requirements, from decoding strings to potential future additions like data processing, file management, and more.
+Welcome to the Python Tools repository, a curated assemblage of versatile and user-friendly Python utilities designed to facilitate a variety of tasks. 
 
-## 1. Encoded String Decoder
+## Tools Overview
 
-### Description
-The Encoded String Decoder is a Python utility crafted to locate and decode strings that are encoded within a provided file. The tool peeks into the file, detects encoded strings following the specified formats, and decodes them, offering insights into potentially concealed or obfuscated data.
+### 1. String Decoder
 
-To use this tool, follow the instructions provided in the [Encoded String Decoder README](Encoded_String_Decoder/README.md).
+#### Description
+The String Decoder is a Python utility designed to decode encoded strings from various formats within a provided file. This tool searches the file for encoded strings, decodes them, and outputs the results in human-readable formats.
 
-## 2. Caesar Cipher Decryption
+- **Path**: `string-decoder/`
+- **Usage**: See instructions in the [String Decoder README](string-decoder/README.md).
 
-### Description
-The Caesar Cipher Decryption tool is designed to decrypt messages that have been encrypted using a Caesar cipher with a specific shift value. It provides a straightforward command-line interface to perform decryption for all possible shift values.
+### 2. Caesar Cipher Tool
 
-To use this tool, follow the instructions provided in the [Caesar Cipher Decryption README](CaesarCipher_Tool/README.md).
+#### Description
+The Caesar Cipher Tool decrypts messages encrypted with the Caesar cipher, a simple shift cipher. This utility includes functionality to decrypt a message with any given shift or to try all possible shifts.
 
-## 3. RC4 Cryptography
+- **Path**: `caesar-cipher/`
+- **Usage**: See instructions in the [Caesar Cipher README](caesar-cipher/README.md).
 
-### Description
-The RC4 Cryptography tool allows you to encrypt and decrypt messages using the RC4 (Rivest Cipher 4) stream cipher. It provides a simple command-line interface for encrypting and decrypting messages with a specified key.
+### 3. RC4 Encryption/Decryption
 
-To use this tool, follow the instructions provided in the [RC4 Cryptography README](Rc4_Crypt/README.md).
+#### Description
+The RC4 Cryptography tool implements the RC4 stream cipher for encrypting and decrypting messages. It provides a straightforward interface for users to enter a key and perform the cryptographic operations.
 
-# Future Tools
-While the repository currently features the Encoded String Decoder, the Caesar Cipher Decryption tool, and the RC4 Cryptography tool, there's a roadmap to introduce more tools that cater to varied use-cases and necessities. Here are a few domains where new tools might emerge:
+- **Path**: `rc4-crypt/`
+- **Usage**: See instructions in the [RC4 Crypt README](rc4-crypt/README.md).
 
-- Data Processing Utilities
-- File Management Tools
-- Network Communication Helpers
-- Web Scraping and Automation Scripts
+### 4. CSV Parser
 
-# License
+#### Description
+The CSV Parser suite contains tools for manipulating CSV files, including appending new data and cleaning existing files.
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+- **Path**: `csv-parser/`
+- **Usage**: See instructions in the [CSV Parser README](csv-parser/README.md).
+
+## Future Tools
+
+The repository is under active development, with plans to expand the toolkit to address a wider array of tasks:
+
+- Data Processing and Analysis Tools
+- Advanced File Management Utilities
+- Networking and Communication Scripts
+- Web Scraping and Automation Tools
+
+## License
+
+Each project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

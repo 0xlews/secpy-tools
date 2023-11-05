@@ -10,7 +10,6 @@ Encoded String Decoder is a simple Python utility designed meticulously to decod
 - [Usage](#usage)
 - [Functionality](#functionality)
 - [Built With](#built-with)
-- [Contribution](#contribution)
 - [License](#license)
 
 ## Getting Started
@@ -45,17 +44,6 @@ Clone the repository
 
 Python 3.10.4
 
-## Contribution
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
 
 ## License
 
