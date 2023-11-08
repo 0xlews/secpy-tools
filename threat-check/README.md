@@ -7,7 +7,7 @@
 ## Features
 
 - Lookup and retrieve information about IP addresses, file hashes, and URLs.
-- Access data from multiple open-source intelligence (OSINT) and threat intelligence sources.
+- Access data from multiple open-source intelligence (OSINT) platforms.
 - Conduct comprehensive threat analysis to identify potential security risks.
 - User-friendly CLI interface for easy and efficient data retrieval.
 
