@@ -12,13 +12,13 @@ The String Decoder is a Python utility designed to decode encoded strings from v
 - **Path**: `string-decoder/`
 - **Usage**: See instructions in the [String Decoder README](string-decoder/README.md).
 
-### 2. Caesar Cipher Tool
+### 2. ImperialCipherPy
 
 #### Description
-The Caesar Cipher Tool decrypts messages encrypted with the Caesar cipher, a simple shift cipher. This utility includes functionality to decrypt a message with any given shift or to try all possible shifts.
+ImperialCipherPy is a simple and efficient Python utility for encrypting and decrypting messages using the Caesar cipher. This tool provides both encryption and decryption functionalities with any given shift value.
 
-- **Path**: `caesar-cipher/`
-- **Usage**: See instructions in the [Caesar Cipher README](caesar-cipher/README.md).
+- **Path**: `ImperialCipherPy/`
+- **Usage**: See instructions in the [ImperialCipherPy README](ImperialCipherPy/README.md).
 
 ### 3. RC4 Encryption/Decryption
 
