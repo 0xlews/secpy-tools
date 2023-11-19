@@ -24,7 +24,6 @@ SleuthPy is a Python utility designed to decode obscured content within files. U
 ### Requirements
 
 - Python 3.10.4 or higher
-- Additional packages may be specified in `requirements.txt`
 
 ### Installation
 
