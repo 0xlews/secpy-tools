@@ -1,5 +1,13 @@
+
+"""
+░█▀▄░█▀▀░█░█░█▀▀░█▀▄░█░█░█▀█░▀█▀
+░█▀▄░█░░░░▀█░█░░░█▀▄░░█░░█▀▀░░█░
+░▀░▀░▀▀▀░░░▀░▀▀▀░▀░▀░░▀░░▀░░░░▀░
+"""
+
 from Crypto.Cipher import ARC4
 import argparse
+import sys
 
 # Function to encrypt using RC4
 def rc4_encrypt(key, plaintext):
@@ -18,11 +26,17 @@ def main():
     parser = argparse.ArgumentParser(description="Encrypt or decrypt a message using RC4.")
     
     # Define cli arguments
-    parser.add_argument("operation", choices=["encrypt", "decrypt"], help="Specify 'encrypt' or 'decrypt'.")
-    parser.add_argument("key", help="Encryption/decryption key (in bytes).")
-    parser.add_argument("message", help="Message to be encrypted or decrypted (in bytes).")
+    parser.add_argument("-o", "--operation", choices=["encrypt", "decrypt"], help="Specify 'encrypt' or 'decrypt'.")
+    parser.add_argument("-k", "--key", help="Encryption/decryption key (in bytes).")
+    parser.add_argument("-m", "--message", help="Message to be encrypted or decrypted (in bytes).")
     
     args = parser.parse_args()
+
+    # Check if no arguments were provided
+    if len(sys.argv) == 1:
+        print(__doc__)  # Print ASCII art
+        parser.print_help()  # Print help message
+        sys.exit(1)  # Exit the script
 
     # Convert the key to bytes
     key = args.key.encode()

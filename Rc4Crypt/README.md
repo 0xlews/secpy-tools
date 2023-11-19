@@ -1,16 +1,17 @@
-# RC4 Cryptography Tool
-
-## Overview
-
-The `rc4crypt.py` script is a simple command-line tool that allows you to encrypt and decrypt messages using the RC4 (Rivest Cipher 4) stream cipher. It uses the PyCryptodome library to perform the encryption and decryption operations.
+```
+░█▀▄░█▀▀░█░█░█▀▀░█▀▄░█░█░█▀█░▀█▀
+░█▀▄░█░░░░▀█░█░░░█▀▄░░█░░█▀▀░░█░
+░▀░▀░▀▀▀░░░▀░▀▀▀░▀░▀░░▀░░▀░░░░▀░
+```
+The `rc4crypt.py` script is a simple command-line tool that allows you to encrypt and decrypt messages using the RC4 (Rivest Cipher 4) stream cipher. It uses the PyCryptodome library to perform the encryption and decryption operations. This tool is designed for educational purposes and provides a straightforward interface for experimenting with the RC4 algorithm.
 
 ## Usage
 
 ### Installation
 
-Before using the script, you need to install the required library. You can install it using pip:
+Before using the script, you need to install the required library, PyCryptodome. You can install it using pip:
 
-```bash
+```
 pip install pycryptodome
 ```
 
@@ -22,19 +23,19 @@ To use the script, run it from the command line, providing the following argumen
 2. `key`: Enter the encryption/decryption key as a string.
 3. `message`: Provide the message you want to encrypt or the ciphertext for decryption.
 
-#### Encryption Example:
+#### Encryption Example
 
 To encrypt a message, use the following command:
 
-```bash
+```
 python rc4crypt.py encrypt YourSecretKey "This is a secret message"
 ```
 
-#### Decryption Example:
+#### Decryption Example
 
 To decrypt a message, use the following command:
 
-```bash
+```
 python rc4crypt.py decrypt YourSecretKey CiphertextString
 ```
 
