@@ -1,4 +1,10 @@
 
+```
+╦╔╦╗╔═╗╔═╗╦═╗╦╔═╗╦    ╔═╗╦╔═╗╦ ╦╔═╗╦═╗  ┌─┐┬ ┬
+║║║║╠═╝║╣ ╠╦╝║╠═╣║    ║  ║╠═╝╠═╣║╣ ╠╦╝  ├─┘└┬┘
+╩╩ ╩╩  ╚═╝╩╚═╩╩ ╩╩═╝  ╚═╝╩╩  ╩ ╩╚═╝╩╚═  ┴   ┴ 
+```
+
 # ImperialCipherPy
 
 ImperialCipherPy is a Python tool for encrypting and decrypting messages using the Caesar cipher, a simple but historically significant encryption technique. Named after Julius Caesar, who famously used it in his private correspondence, this tool brings an ancient cipher to the modern digital age.
