@@ -1,9 +1,0 @@
-Encoded String,Encoding Type,Decoded String
-SGVsbG8gd29ybGQ=,Base64,Hello world
-YW5vdGhlciBlbmNvZGVkIHN0cmluZw==,Base64,another encoded string
-VGVzdCBmb3Igc2NyaXB0,Base64,Test for script
-48656c6c6f20576f726c64,Hex,Hello World
-546869732069732061207465737420666f722074686520736372697074,Hex,This is a test for the script
-https%3A%2F%2Fwww.example.com%2Fpath%3Fquery%3Dvalue,URL Encoding,https://www.example.com/path?query=value
-https%3A%2F%2Fwww.sample.com%2Ffind%3Fbook%3DHarry%20Potter%26author%3DJ.K.%20Rowling,URL Encoding,https://www.sample.com/find?book=Harry Potter&author=J.K. Rowling
-https%3A%2F%2Fwww.webstore.com%2Fproduct%3Fitem%3Dsmartphone%26brand%3DBrandName%26model%3DX-200,URL Encoding,https://www.webstore.com/product?item=smartphone&brand=BrandName&model=X-200

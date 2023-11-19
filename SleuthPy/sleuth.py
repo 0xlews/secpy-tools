@@ -1,3 +1,13 @@
+
+"""
+ __ _            _   _       ___       
+/ _\ | ___ _   _| |_| |__   / _ \_   _ 
+\ \| |/ _ \ | | | __| '_ \ / /_)/ | | |
+_\ \ |  __/ |_| | |_| | | / ___/| |_| |
+\__/_|\___|\__,_|\__|_| |_\/     \__, |
+                                 |___/ 
+"""
+
 import argparse
 import base64
 import binascii
@@ -96,8 +106,8 @@ def detect_and_decode(file_path, encoding=None):
 # Main function to handle command-line arguments and execute the program
 def main():
     parser = argparse.ArgumentParser(description="Decode encoded strings in a file")
-    parser.add_argument("input", help="Input file path")
-    parser.add_argument("output", help="Output file path")
+    parser.add_argument("-i", "--input", help="Input file path")
+    parser.add_argument("-o", "--output", help="Output file path")
     parser.add_argument(
         "-e", "--encoding",
         choices=["Base64", "Hex", "URL Encoding"],
@@ -105,6 +115,12 @@ def main():
     )
 
     args = parser.parse_args()
+
+    # Check if no arguments were provided
+    if len(sys.argv) == 1:
+        print(__doc__)  # Print ASCII art
+        parser.print_help()  # Print help message
+        sys.exit(1)  # Exit the script
 
     # Check the output file extension
     output_file_path, ext = os.path.splitext(args.output)

@@ -1,0 +1,17 @@
+[
+    {
+        "Encoded String": "SGVsbG8gd29ybGQ=",
+        "Encoding Type": "Base64",
+        "Decoded String": "Hello world"
+    },
+    {
+        "Encoded String": "YW5vdGhlciBlbmNvZGVkIHN0cmluZw==",
+        "Encoding Type": "Base64",
+        "Decoded String": "another encoded string"
+    },
+    {
+        "Encoded String": "VGVzdCBmb3Igc2NyaXB0",
+        "Encoding Type": "Base64",
+        "Decoded String": "Test for script"
+    }
+]
